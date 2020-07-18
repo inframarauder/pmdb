@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Navbar, Nav } from "react-bootstrap";
+import ThemeToggler from "./ThemeToggler";
 import { ThemeContext } from "../contexts/ThemeContext";
 
 const Header = () => {
@@ -13,6 +14,7 @@ const Header = () => {
         <Nav className="ml-auto mr-4">
           <Nav.Link href="/login">Login</Nav.Link>
         </Nav>
+        <ThemeToggler />
       </Navbar.Collapse>
     </Navbar>
   );

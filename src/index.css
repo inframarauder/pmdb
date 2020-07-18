@@ -1,3 +1,5 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
 * {
   padding: 0;
   margin: 0;
@@ -40,4 +42,25 @@
 .light {
   background-color: var(--bg-light);
   color: var(--text-light);
+}
+
+.theme-toggler {
+  position: relative;
+  display: inline-flex;
+  float: right;
+  padding: 10px;
+}
+
+.theme-toggler-btn {
+  border: 1px solid;
+  border-radius: 100px;
+}
+
+.theme-toggler-btn:focus {
+  outline: 0;
+}
+
+.theme-toggler-btn i {
+  font-size: 30px;
+  padding: 10px;
 }
