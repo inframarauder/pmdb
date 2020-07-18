@@ -1,7 +1,13 @@
 import React from "react";
+import Header from "./components/Header";
+import ThemeContextProvider from "./contexts/ThemeContext";
 
 function App() {
-  return <div>PMDb</div>;
+  return (
+    <ThemeContextProvider>
+      <Header />
+    </ThemeContextProvider>
+  );
 }
 
 export default App;
