@@ -64,3 +64,34 @@
   font-size: 30px;
   padding: 10px;
 }
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  max-width: 150px;
+  max-height: 150px;
+  padding: 5px;
+}
+
+.movies-container {
+  min-height: 100vh;
+}
+
+.movie-card {
+  padding: 10px;
+  margin: 20px;
+}
+.movie-poster {
+  height: 300px;
+  width: 200px;
+  padding: 10px;
+}
+
+.rating {
+  float: right;
+  padding: 5px;
+}
