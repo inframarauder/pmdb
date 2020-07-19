@@ -1,9 +1,10 @@
 import React, { useEffect, useContext } from "react";
 import axios from "axios";
+import { Container } from "react-bootstrap";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { MovieContext } from "../contexts/MovieContext";
-import { Container } from "react-bootstrap";
 import MovieCard from "../components/MovieCard";
+import { BASE_URL } from "../configs";
 
 const Main = () => {
   const { theme } = useContext(ThemeContext);
@@ -12,10 +13,7 @@ const Main = () => {
   useEffect(() => {
     (async () => {
       try {
-        const res = await axios.get(
-          "https://pmdb-api.herokuapp.com/api/movies"
-        );
-
+        const res = await axios.get(`${BASE_URL}/movies`);
         resetMovies(res.data);
       } catch (error) {
         console.error(error);
