@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { MovieContext } from "../contexts/MovieContext";
 import MovieCard from "../components/MovieCard";
+import SearchAndFilter from "../components/SearchAndFilter";
 import { BASE_URL } from "../configs";
 
 const Main = () => {
@@ -23,8 +24,10 @@ const Main = () => {
 
   return (
     <div className={`${theme.mode} main`}>
-      <img src="/assets/pmdb-logo.png" className="logo" alt="pmdb-logo" />
       <div className="movies-container">
+        <div className="search-filter-area">
+          <SearchAndFilter />
+        </div>
         <Container>
           {movies.length < 0
             ? "Loading"

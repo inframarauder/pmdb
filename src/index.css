@@ -71,14 +71,15 @@
   justify-content: center;
   align-items: center;
 }
-.logo {
-  max-width: 150px;
-  max-height: 150px;
-  padding: 5px;
+.search-filter-area {
+  padding: 10px;
+  margin-top: 5%;
 }
 
 .movies-container {
   min-height: 100vh;
+  padding: 10px;
+  margin-top: 50px;
 }
 
 .movie-card {

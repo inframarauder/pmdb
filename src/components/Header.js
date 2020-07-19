@@ -7,7 +7,7 @@ const Header = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <Navbar bg={theme.mode} expand="lg" variant={theme.mode}>
+    <Navbar bg={theme.mode} expand="lg" variant={theme.mode} fixed="top">
       <Navbar.Brand href="/">Public Movie Database</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
