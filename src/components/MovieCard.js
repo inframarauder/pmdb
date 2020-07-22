@@ -4,6 +4,7 @@ import { ThemeContext } from "../contexts/ThemeContext";
 
 const MovieCard = ({ movie }) => {
   const { theme } = useContext(ThemeContext);
+
   return (
     <Card className={`${theme.mode} movie-card`}>
       <Card.Body>
@@ -26,13 +27,13 @@ const MovieCard = ({ movie }) => {
               </span>
             </Card.Title>
             <Card.Subtitle className="mb-2 text-muted">
-              {movie.genre}
+              {movie.genres}
             </Card.Subtitle>
             <hr />
             <Card.Text>
-              Directed by : {movie.directedBy}
+              Director(s) : {movie.directors}
               <br />
-              Starring : {movie.cast}
+              Starring : {movie.starring}
             </Card.Text>
             <Card.Text>{movie.plot}</Card.Text>
             <Card.Link href="">View Reviews</Card.Link>

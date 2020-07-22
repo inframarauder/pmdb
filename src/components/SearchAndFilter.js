@@ -6,7 +6,7 @@ import { BASE_URL } from "../configs";
 
 const SearchAndFilter = () => {
   const [search, setSearch] = useState("");
-  const { movies, resetMovies } = useContext(MovieContext);
+  const { resetMovies } = useContext(MovieContext);
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
