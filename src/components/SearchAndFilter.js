@@ -6,18 +6,19 @@ import { BASE_URL } from "../configs";
 
 const SearchAndFilter = () => {
   const [search, setSearch] = useState("");
-  const { resetMovies } = useContext(MovieContext);
+  const { fillMovies, toggleLoading } = useContext(MovieContext);
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      toggleLoading();
       const res = await axios.get(`${BASE_URL}/movies`, {
         params: { search: search },
       });
-      console.log(res.data);
-      resetMovies(res.data);
+      toggleLoading();
+      fillMovies(res.data);
     } catch (error) {
       console.error(error);
     }
