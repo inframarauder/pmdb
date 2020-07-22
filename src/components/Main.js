@@ -25,10 +25,11 @@ const Main = () => {
   return (
     <div className={`${theme.mode} main`}>
       <div className="movies-container">
-        <div className="search-filter-area">
-          <SearchAndFilter />
-        </div>
+        <legend className="text-center caption">List of movies :</legend>
         <Container>
+          <div className="search-filter-area">
+            <SearchAndFilter />
+          </div>
           {movies.length < 0
             ? "Loading"
             : movies.map((movie) => (

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Row, Col } from "react-bootstrap";
 import { MovieContext } from "../contexts/MovieContext";
 import { BASE_URL } from "../configs";
 
@@ -24,17 +24,21 @@ const SearchAndFilter = () => {
   };
   return (
     <Form onSubmit={(e) => handleSubmit(e)}>
-      <Form.Group>
-        <Form.Control
-          type="text"
-          placeholder="Search by name,director,cast"
-          value={search}
-          onChange={(e) => handleChange(e)}
-        />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Search
-      </Button>
+      <Row>
+        <Col sm="9">
+          <Form.Control
+            type="text"
+            placeholder="Search by name,genre,year,director,cast"
+            value={search}
+            onChange={(e) => handleChange(e)}
+          />
+        </Col>
+        <Col sm="3" id="searchBtnCol">
+          <Button variant="primary" type="submit">
+            Search
+          </Button>
+        </Col>
+      </Row>
     </Form>
   );
 };
