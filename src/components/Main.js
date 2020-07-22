@@ -5,6 +5,7 @@ import { ThemeContext } from "../contexts/ThemeContext";
 import { MovieContext } from "../contexts/MovieContext";
 import MovieCard from "../components/MovieCard";
 import SearchAndFilter from "../components/SearchAndFilter";
+import Spinner from "../components/Spinner";
 import { BASE_URL } from "../configs";
 
 const Main = () => {
@@ -32,11 +33,13 @@ const Main = () => {
           <div className="search-filter-area">
             <SearchAndFilter />
           </div>
-          {movies.loading
-            ? "Loading"
-            : movies.list.map((movie) => (
-                <MovieCard key={movie._id} movie={movie} />
-              ))}
+          {movies.loading ? (
+            <Spinner />
+          ) : (
+            movies.list.map((movie) => (
+              <MovieCard key={movie._id} movie={movie} />
+            ))
+          )}
         </Container>
       </div>
     </div>
