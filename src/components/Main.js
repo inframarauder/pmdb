@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import axios from "axios";
 import { Container } from "react-bootstrap";
+import { ToastContainer, toast } from "react-toastify";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { MovieContext } from "../contexts/MovieContext";
 import MovieCard from "../components/MovieCard";
@@ -20,13 +21,15 @@ const Main = () => {
         toggleLoading();
         fillMovies(data);
       } catch (error) {
-        console.error(error);
+        console.error(error.response.data);
+        toast.error(error.response.data.error);
       }
     })();
   }, []);
 
   return (
     <div className={`${theme.mode} main`}>
+      <ToastContainer />
       <div className="movies-container">
         <legend className="text-center caption">List of movies :</legend>
         <Container>
