@@ -1,5 +1,4 @@
-import React, { useState, createContext, useContext } from "react";
-import { AuthContext } from "../contexts";
+import React, { useState, createContext } from "react";
 
 export const ReviewContext = createContext();
 
@@ -7,42 +6,16 @@ const ReviewContextProvider = (props) => {
   const [reviewState, setReviewState] = useState({
     movie: null,
     loading: true,
-    reviews: {
-      userReview: null,
-      otherReviews: [],
-    },
+    reviews: [],
   });
 
-  const { auth } = useContext(AuthContext);
-
   const setMovieAndReviews = (movie, reviews) => {
-    if (auth.isLoggedIn) {
-      let userReview = reviews.filter(
-        (review) => review.author.username === auth.user.username
-      )[0];
-      let otherReviews = reviews.filter(
-        (review) => review.author.username !== auth.user.username
-      );
-      setReviewState({
-        ...reviewState,
-        loading: false,
-        movie: movie,
-        reviews: {
-          userReview: userReview,
-          otherReviews: otherReviews,
-        },
-      });
-    } else {
-      setReviewState({
-        ...reviewState,
-        loading: false,
-        movie: movie,
-        reviews: {
-          userReview: null,
-          otherReviews: reviews,
-        },
-      });
-    }
+    setReviewState({
+      ...reviewState,
+      loading: false,
+      movie: movie,
+      reviews: reviews,
+    });
   };
 
   const addReview = (review) => {

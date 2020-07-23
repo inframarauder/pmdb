@@ -6,17 +6,17 @@ const ReviewCard = ({ review }) => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <Card className={`${theme.mode} movie-card`}>
+    <Card className={`${theme.mode} review-card`}>
       <Card.Body>
         <Row>
           <Col sm="3" className="text-center">
+            <Card.Subtitle className="mb-2 text-muted">
+              {review.author.username}
+            </Card.Subtitle>
+            <hr />
             <h2>{review.rating}</h2>
           </Col>
           <Col sm="9">
-            <Card.Subtitle className="mb-2 text-muted">
-              Author: {review.author.username}
-            </Card.Subtitle>
-            <hr />
             <Card.Text>{review.content}</Card.Text>
           </Col>
         </Row>

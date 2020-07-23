@@ -32,28 +32,23 @@ const Reviews = ({ match: { params } }) => {
   return (
     <div className={`${theme.mode} main`}>
       <ToastContainer />
-      <div className="movie-review-area">
+      <div className="movie-review-container">
         {loading ? (
           <Spinner />
         ) : (
-          <div className="movie-info">
-            <Row>
-              <Col sm="4">
-                <ReviewMovie movie={movie} />
-              </Col>
-              <Col sm="8">
-                {reviews.userReview && (
-                  <div className="user-review">
-                    <legend className="text-center">Your Review :</legend>
-                  </div>
-                )}
+          <Row>
+            <Col sm="4">
+              <ReviewMovie movie={movie} />
+            </Col>
+            <Col sm="8">
+              <div className="review-area">
                 <legend className="text-center">Reviews :</legend>
-                {reviews.otherReviews.map((review) => (
+                {reviews.map((review) => (
                   <ReviewCard key={review._id} review={review} />
                 ))}
-              </Col>
-            </Row>
-          </div>
+              </div>
+            </Col>
+          </Row>
         )}
       </div>
     </div>

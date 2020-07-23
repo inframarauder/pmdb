@@ -141,22 +141,11 @@
   align-items: center;
 }
 
-.movie-review-area {
+.movie-review-container {
   min-height: 100vh;
   width: 100vw;
   padding: 20px;
   margin-top: 5%;
-}
-
-.movie-title {
-  padding: 10px;
-}
-.movie-name {
-  font-size: 2rem;
-}
-
-.movie-other-info {
-  padding: 10px;
 }
 @media only screen and (max-width: 500px) {
   .movie-review-area {
@@ -194,4 +183,26 @@
   padding: 10px;
   margin: 10px;
   font-size: 1.2rem;
+}
+
+.review-card {
+  padding: 10px;
+  width: 70%;
+  border: 2px solid #222222;
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+  .review-card {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.review-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
