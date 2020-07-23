@@ -3,8 +3,7 @@ import { Form, Button } from "react-bootstrap";
 import { toast, ToastContainer } from "react-toastify";
 import { ThemeContext } from "../contexts";
 import { Spinner } from "../components/Layouts";
-import axios from "axios";
-import { BASE_URL } from "../configs";
+import Api from "../Api";
 
 const Auth = () => {
   const { theme } = useContext(ThemeContext);
@@ -28,10 +27,10 @@ const Auth = () => {
       setState({ ...state, loading: true });
       switch (event) {
         case "Login":
-          res = await axios.post(`${BASE_URL}/auth/login`, body);
+          res = await Api.login(body);
           break;
         case "Signup":
-          res = await axios.post(`${BASE_URL}/auth/signup`, body);
+          res = await Api.signup(body);
           break;
         default:
           alert("Invalid!");

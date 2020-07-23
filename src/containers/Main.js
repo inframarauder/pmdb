@@ -1,11 +1,10 @@
 import React, { useEffect, useContext } from "react";
-import axios from "axios";
 import { Container } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import { ThemeContext, MovieContext } from "../contexts/";
 import { MovieCard, SearchAndFilter } from "../components/Movies";
 import { Spinner } from "../components/Layouts";
-import { BASE_URL } from "../configs";
+import Api from "../Api";
 
 const Main = () => {
   const { theme } = useContext(ThemeContext);
@@ -14,7 +13,7 @@ const Main = () => {
     (async () => {
       try {
         toggleLoading();
-        const { data } = await axios.get(`${BASE_URL}/movies`);
+        const { data } = await Api.loadMovies();
         toggleLoading();
         fillMovies(data);
       } catch (error) {

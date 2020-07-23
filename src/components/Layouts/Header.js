@@ -3,31 +3,7 @@ import { Navbar, Nav, Button } from "react-bootstrap";
 import { toast, ToastContainer } from "react-toastify";
 import ThemeToggler from "./ThemeToggler";
 import { ThemeContext, AuthContext } from "../../contexts";
-import axios from "axios";
-import { BASE_URL } from "../../configs";
-
-axios.interceptors.response.use(
-  (response) => {
-    return response;
-  },
-  function (error) {
-    const originalRequest = error.config;
-    if (error.response.status === 401 && !originalRequest._retry) {
-      originalRequest._retry = true;
-      return axios
-        .post(`${BASE_URL}/auth/refresh_token`, {
-          refreshToken: localStorage.getItem("refreshToken"),
-        })
-        .then((res) => {
-          if (res.status === 200) {
-            localStorage.setItem("refreshToken", res.data.refreshToken);
-            return axios(originalRequest);
-          }
-        });
-    }
-    return Promise.reject(error);
-  }
-);
+import Api from "../../Api";
 
 const Header = () => {
   const { theme } = useContext(ThemeContext);
@@ -41,9 +17,7 @@ const Header = () => {
           if (!accessToken) {
             logoutUser();
           } else {
-            const res = await axios.get(`${BASE_URL}/user`, {
-              headers: { "x-auth-token": accessToken },
-            });
+            const res = await Api.loadtUser();
             loginUser(res.data);
           }
         } catch (error) {
@@ -57,9 +31,7 @@ const Header = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.delete(`${BASE_URL}/auth/logout`, {
-        refreshToken: localStorage.getItem("refreshToken"),
-      });
+      await Api.logout();
       localStorage.removeItem("accessToken");
       localStorage.removeItem("refreshToken");
       logoutUser();

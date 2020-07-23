@@ -1,8 +1,7 @@
 import React, { useState, useContext } from "react";
-import axios from "axios";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { MovieContext } from "../../contexts";
-import { BASE_URL } from "../../configs";
+import Api from "../../Api";
 
 const SearchAndFilter = () => {
   const [search, setSearch] = useState("");
@@ -14,9 +13,7 @@ const SearchAndFilter = () => {
     e.preventDefault();
     try {
       toggleLoading();
-      const res = await axios.get(`${BASE_URL}/movies`, {
-        params: { search: search },
-      });
+      const res = await Api.loadMovies({ search });
       toggleLoading();
       fillMovies(res.data);
     } catch (error) {
