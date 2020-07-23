@@ -181,3 +181,9 @@
     width: 100%;
   }
 }
+
+.greet {
+  padding: 10px;
+  margin: 10px;
+  font-size: 1.2rem;
+}
