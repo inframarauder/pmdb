@@ -3,7 +3,7 @@ import axios from "axios";
 import { Container } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import { ThemeContext, MovieContext } from "../contexts/";
-import { MovieCard, SearchAndFilter } from "./Movies";
+import { MovieCard, SearchAndFilter } from "../components/Movies";
 import { Spinner } from "../components/Layouts";
 import { BASE_URL } from "../configs";
 

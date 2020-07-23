@@ -159,3 +159,25 @@
     text-align: center;
   }
 }
+
+.login-area {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  width: 20%;
+  padding: 10px;
+}
+.submit-btn {
+  margin: 10px;
+}
+
+@media only screen and (max-width: 500px) {
+  .login-form {
+    width: 100%;
+  }
+}
