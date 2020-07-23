@@ -35,7 +35,8 @@ api.interceptors.response.use(
         .post(`${BASE_URL}/auth/refresh_token`, { refreshToken: refreshToken })
         .then((res) => {
           if (res.status === 200) {
-            localStorage.setItem("refreshToken", res.data.refreshToken);
+            localStorage.setItem("accessToken", res.data.accessToken);
+            console.log("Access token refreshed!");
             return api(originalRequest);
           }
         });

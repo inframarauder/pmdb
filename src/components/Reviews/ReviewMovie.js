@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Card, Row, Col } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { ThemeContext } from "../../contexts";
 
 const ReviewMovie = ({ movie }) => {

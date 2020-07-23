@@ -3,7 +3,7 @@ import { toast, ToastContainer } from "react-toastify";
 import { ThemeContext, ReviewContext } from "../contexts";
 import { Spinner } from "../components/Layouts";
 import { ReviewCard, ReviewMovie } from "../components/Reviews";
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import Api from "../Api";
 
 const Reviews = ({ match: { params } }) => {
@@ -41,7 +41,17 @@ const Reviews = ({ match: { params } }) => {
               <Col sm="4">
                 <ReviewMovie movie={movie} />
               </Col>
-              <Col sm="8"></Col>
+              <Col sm="8">
+                {reviews.userReview && (
+                  <div className="user-review">
+                    <legend className="text-center">Your Review :</legend>
+                  </div>
+                )}
+                <legend className="text-center">Reviews :</legend>
+                {reviews.otherReviews.map((review) => (
+                  <ReviewCard key={review._id} review={review} />
+                ))}
+              </Col>
             </Row>
           </div>
         )}

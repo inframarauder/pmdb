@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Navbar, Nav, Button } from "react-bootstrap";
 import { toast, ToastContainer } from "react-toastify";
 import ThemeToggler from "./ThemeToggler";
@@ -7,27 +7,7 @@ import Api from "../../Api";
 
 const Header = () => {
   const { theme } = useContext(ThemeContext);
-  const { auth, loginUser, logoutUser } = useContext(AuthContext);
-
-  useEffect(
-    () => {
-      (async () => {
-        try {
-          let accessToken = localStorage.getItem("accessToken");
-          if (!accessToken) {
-            logoutUser();
-          } else {
-            const res = await Api.loadUser();
-            loginUser(res.data);
-          }
-        } catch (error) {
-          console.error(error);
-          toast.error(error.response.data.error);
-        }
-      })();
-    }, // eslint-disable-next-line
-    []
-  );
+  const { auth, logoutUser } = useContext(AuthContext);
 
   const handleLogout = async () => {
     try {
