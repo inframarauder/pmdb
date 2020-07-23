@@ -23,6 +23,7 @@ const Reviews = ({ match: { params } }) => {
         toast.error(error.response.data.error);
       }
     })();
+    // eslint-disable-next-line
   }, []);
 
   console.log(reviewState);

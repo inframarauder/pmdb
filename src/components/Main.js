@@ -3,14 +3,13 @@ import axios from "axios";
 import { Container } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import { ThemeContext, MovieContext } from "../contexts/";
-import { MovieCard, SearchAndFilter, Reviews } from "./Movies";
+import { MovieCard, SearchAndFilter } from "./Movies";
 import { Spinner } from "../components/Layouts";
 import { BASE_URL } from "../configs";
 
 const Main = () => {
   const { theme } = useContext(ThemeContext);
   const { movies, fillMovies, toggleLoading } = useContext(MovieContext);
-
   useEffect(() => {
     (async () => {
       try {
@@ -23,6 +22,7 @@ const Main = () => {
         toast.error(error.response.data.error);
       }
     })();
+    // eslint-disable-next-line
   }, []);
 
   return (

@@ -1,6 +1,7 @@
 import MovieContextProvider, { MovieContext } from "./MovieContext";
 import ThemeContextProvider, { ThemeContext } from "./ThemeContext";
 import ReviewContextProvider, { ReviewContext } from "./ReviewContext";
+import AuthContextProvider, { AuthContext } from "./AuthContext";
 
 export {
   MovieContext,
@@ -9,4 +10,6 @@ export {
   ThemeContextProvider,
   ReviewContext,
   ReviewContextProvider,
+  AuthContext,
+  AuthContextProvider,
 };
