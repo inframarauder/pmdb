@@ -132,3 +132,30 @@
   justify-content: center;
   align-items: center;
 }
+
+.movie-review-area {
+  min-height: 100vh;
+  width: 100vw;
+  padding: 20px;
+  margin-top: 5%;
+}
+
+.movie-title {
+  padding: 10px;
+}
+.movie-name {
+  font-size: 2rem;
+}
+
+.movie-other-info {
+  padding: 10px;
+}
+@media only screen and (max-width: 500px) {
+  .movie-review-area {
+    padding: 50px;
+  }
+
+  .movie-title {
+    text-align: center;
+  }
+}

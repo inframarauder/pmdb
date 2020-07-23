@@ -5,12 +5,19 @@ export const ReviewContext = createContext();
 const ReviewContextProvider = (props) => {
   const [reviewState, setReviewState] = useState({
     movie: null,
-    loading: false,
+    loading: true,
     reviews: [],
   });
-  const setMovie = (movie) => {
-    setReviewState({ ...reviewState, movie: movie });
+
+  const setMovieAndReviews = (movie, reviews) => {
+    setReviewState({
+      ...reviewState,
+      loading: false,
+      movie: movie,
+      reviews: reviews,
+    });
   };
+
   const addReview = (review) => {
     setReviewState({
       ...reviewState,
@@ -28,7 +35,13 @@ const ReviewContextProvider = (props) => {
   };
   return (
     <ReviewContext.Provider
-      value={{ reviews, setMovie, addReview, deleteReview, toggleLoading }}
+      value={{
+        reviewState,
+        setMovieAndReviews,
+        addReview,
+        deleteReview,
+        toggleLoading,
+      }}
     >
       {props.children}
     </ReviewContext.Provider>
