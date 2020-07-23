@@ -7,7 +7,11 @@ import { Reviews } from "./components/Movies";
 import Main from "./components/Main";
 
 //contexts
-import { MovieContextProvider, ThemeContextProvider } from "./contexts/";
+import {
+  MovieContextProvider,
+  ThemeContextProvider,
+  ReviewContextProvider,
+} from "./contexts/";
 
 function App() {
   return (
@@ -17,7 +21,9 @@ function App() {
         <MovieContextProvider>
           <Switch>
             <Route exact path="/" component={Main} />
-            <Route exact path="/reviews/movie/:id" component={Reviews} />
+            <ReviewContextProvider>
+              <Route exact path="/reviews/movie/:id" component={Reviews} />
+            </ReviewContextProvider>
             <Route component={NotFound} />
           </Switch>
         </MovieContextProvider>
