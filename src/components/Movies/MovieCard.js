@@ -36,7 +36,9 @@ const MovieCard = ({ movie }) => {
               Starring : {movie.starring}
             </Card.Text>
             <Card.Text>{movie.plot}</Card.Text>
-            <Card.Link href="">View Reviews</Card.Link>
+            <Card.Link href={`/reviews/movie/${movie._id}`}>
+              View Reviews
+            </Card.Link>
           </Col>
         </Row>
       </Card.Body>
