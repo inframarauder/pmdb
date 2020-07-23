@@ -2,11 +2,9 @@ import React, { useEffect, useContext } from "react";
 import axios from "axios";
 import { Container } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
-import { ThemeContext } from "../contexts/ThemeContext";
-import { MovieContext } from "../contexts/MovieContext";
-import MovieCard from "../components/MovieCard";
-import SearchAndFilter from "../components/SearchAndFilter";
-import Spinner from "../components/Spinner";
+import { ThemeContext, MovieContext } from "../contexts/";
+import { MovieCard, SearchAndFilter } from "./Movies";
+import { Spinner } from "../components/Layouts";
 import { BASE_URL } from "../configs";
 
 const Main = () => {

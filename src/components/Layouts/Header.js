@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import ThemeToggler from "./ThemeToggler";
-import { ThemeContext } from "../contexts/ThemeContext";
+import { ThemeContext } from "../../contexts";
 
 const Header = () => {
   const { theme } = useContext(ThemeContext);

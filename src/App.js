@@ -1,9 +1,11 @@
 import React from "react";
-import Header from "./components/Header";
+
+//components
+import { Header } from "./components/Layouts";
 import Main from "./components/Main";
 
-import ThemeContextProvider from "./contexts/ThemeContext";
-import MovieContextProvider from "./contexts/MovieContext";
+//contexts
+import { MovieContextProvider, ThemeContextProvider } from "./contexts/";
 
 function App() {
   return (

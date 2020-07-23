@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Card, Row, Col } from "react-bootstrap";
-import { ThemeContext } from "../contexts/ThemeContext";
+import { ThemeContext } from "../../contexts";
 
 const MovieCard = ({ movie }) => {
   const { theme } = useContext(ThemeContext);

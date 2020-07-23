@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import { Form, Button, Row, Col } from "react-bootstrap";
-import { MovieContext } from "../contexts/MovieContext";
-import { BASE_URL } from "../configs";
+import { MovieContext } from "../../contexts";
+import { BASE_URL } from "../../configs";
 
 const SearchAndFilter = () => {
   const [search, setSearch] = useState("");
