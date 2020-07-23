@@ -1,4 +1,5 @@
 import Auth from "./Auth";
-import Main from "./Main";
+import Movies from "./Movie";
+import Reviews from "./Reviews";
 
-export { Auth, Main };
+export { Auth, Movies, Reviews };

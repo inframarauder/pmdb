@@ -1,12 +1,12 @@
 import React, { useEffect, useContext } from "react";
 import { Container } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
-import { ThemeContext, MovieContext } from "../contexts/";
+import { ThemeContext, MovieContext } from "../contexts";
 import { MovieCard, SearchAndFilter } from "../components/Movies";
 import { Spinner } from "../components/Layouts";
 import Api from "../Api";
 
-const Main = () => {
+const Movies = () => {
   const { theme } = useContext(ThemeContext);
   const { movies, fillMovies, toggleLoading } = useContext(MovieContext);
   useEffect(() => {
@@ -46,4 +46,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Movies;

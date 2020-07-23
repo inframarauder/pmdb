@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 //components
 import { Header, NotFound } from "./components/Layouts";
-import { Reviews } from "./components/Movies";
-import { Auth, Main } from "./containers";
+import { Auth, Movies, Reviews } from "./containers";
 
 //contexts
 import {
@@ -22,7 +21,7 @@ function App() {
           <Header />
           <MovieContextProvider>
             <Switch>
-              <Route exact path="/" component={Main} />
+              <Route exact path="/" component={Movies} />
               <ReviewContextProvider>
                 <Route exact path="/reviews/movie/:id" component={Reviews} />
                 <Route exact path="/login" component={Auth} />

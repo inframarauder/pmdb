@@ -17,7 +17,7 @@ const Header = () => {
           if (!accessToken) {
             logoutUser();
           } else {
-            const res = await Api.loadtUser();
+            const res = await Api.loadUser();
             loginUser(res.data);
           }
         } catch (error) {
