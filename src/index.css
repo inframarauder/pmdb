@@ -101,6 +101,14 @@
   padding: 10px;
   margin: 20px;
 }
+
+@media only screen and (max-width: 500px) {
+  .movie-card {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+}
 .movie-poster {
   height: 300px;
   width: 200px;

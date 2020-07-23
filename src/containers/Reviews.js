@@ -2,8 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { ThemeContext, ReviewContext } from "../contexts";
 import { Spinner } from "../components/Layouts";
-import ReviewCard from "../components/Reviews/ReviewCard";
-import MovieCard from "../components/Movies/MovieCard";
+import { ReviewCard, ReviewMovie } from "../components/Reviews";
 import { Row, Col, Container } from "react-bootstrap";
 import Api from "../Api";
 
@@ -40,7 +39,7 @@ const Reviews = ({ match: { params } }) => {
           <div className="movie-info">
             <Row>
               <Col sm="4">
-                <MovieCard movie={movie} />
+                <ReviewMovie movie={movie} />
               </Col>
               <Col sm="8"></Col>
             </Row>

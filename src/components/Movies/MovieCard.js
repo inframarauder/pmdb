@@ -21,13 +21,13 @@ const MovieCard = ({ movie }) => {
               <h3>
                 {movie.name} ({movie.year})
               </h3>
+            </Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">
+              {movie.genres}
               <span className="rating">
                 <small>Rating : </small>
                 {movie.rating}/10
               </span>
-            </Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">
-              {movie.genres}
             </Card.Subtitle>
             <hr />
             <Card.Text>
@@ -35,7 +35,6 @@ const MovieCard = ({ movie }) => {
               <br />
               Starring : {movie.starring}
             </Card.Text>
-            <Card.Text>{movie.plot}</Card.Text>
             <Card.Link href={`/reviews/movie/${movie._id}`}>
               View Reviews
             </Card.Link>
