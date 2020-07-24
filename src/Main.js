@@ -21,11 +21,6 @@ const Main = () => {
     () => {
       (() => {
         try {
-          //set theme:
-          let mode = localStorage.getItem("mode");
-          if (!mode) {
-            localStorage.setItem("mode", "dark");
-          }
           //check for logged in users
           let accessToken = localStorage.getItem("accessToken");
           if (!accessToken) {
