@@ -3,7 +3,9 @@ import React, { useState, createContext } from "react";
 export const ThemeContext = createContext();
 
 const ThemeContextProvider = (props) => {
-  const [theme, setTheme] = useState({ mode: localStorage.getItem("mode") });
+  const [theme, setTheme] = useState({
+    mode: localStorage.getItem("mode") || "dark",
+  });
 
   const toggleTheme = () => {
     switch (theme.mode) {
