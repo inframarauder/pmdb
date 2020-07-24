@@ -30,6 +30,14 @@ const Api = {
   loadUserMovieReview: (id) => {
     return api.get(`${BASE_URL}/reviews/read/${id}`);
   },
+
+  postReview: (body) => {
+    return api.post(`${BASE_URL}/reviews`, body);
+  },
+
+  updateReview: (id, body) => {
+    return api.put(`${BASE_URL}/reviews/${id}`, body);
+  },
 };
 
 export default Api;
