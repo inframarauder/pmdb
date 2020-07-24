@@ -13,10 +13,11 @@ const Reviews = ({ match: { params } }) => {
   useEffect(() => {
     (async () => {
       try {
-        const [movie, reviews] = await Promise.all([
+        const apiCalls = [
           Api.loadMovieById(params.id),
           Api.loadReviewsByMovieId(params.id),
-        ]);
+        ];
+        const [movie, reviews] = await Promise.all(apiCalls);
 
         setMovieAndReviews(movie.data, reviews.data);
       } catch (error) {

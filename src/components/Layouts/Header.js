@@ -14,8 +14,10 @@ const Header = () => {
       await Api.logout();
       localStorage.removeItem("accessToken");
       localStorage.removeItem("refreshToken");
+      localStorage.removeItem("user");
       logoutUser();
-      window.location.href = "/";
+      toast.success("Logged Out!");
+      setTimeout(() => (window.location.href = "/"), 500);
     } catch (error) {
       console.error(error);
       toast.error(error);

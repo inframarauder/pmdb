@@ -36,14 +36,15 @@ const Auth = () => {
           alert("Invalid!");
       }
 
-      let { accessToken, refreshToken } = res.data;
+      let { accessToken, refreshToken, user } = res.data;
       localStorage.setItem("accessToken", accessToken);
       localStorage.setItem("refreshToken", refreshToken);
+      localStorage.setItem("user", JSON.stringify(user));
 
       setState({ ...state, loading: false });
       toast.success(`${event} Successful`);
 
-      setTimeout(() => (window.location.href = "/"), 1000);
+      setTimeout(() => (window.location.href = "/"), 500);
     } catch (error) {
       console.error(error.response);
       toast.error(error.response.data.error);

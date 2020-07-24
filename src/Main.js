@@ -14,24 +14,23 @@ import {
   AuthContext,
 } from "./contexts/";
 
-import Api from "./Api";
-
 const Main = () => {
   const { loginUser, logoutUser } = useContext(AuthContext);
+
   useEffect(
     () => {
-      (async () => {
+      (() => {
         try {
           let accessToken = localStorage.getItem("accessToken");
           if (!accessToken) {
             logoutUser();
           } else {
-            const res = await Api.loadUser();
-            loginUser(res.data);
+            const user = JSON.parse(localStorage.getItem("user"));
+            loginUser(user);
           }
         } catch (error) {
           console.error(error);
-          toast.error(error.response.data.error);
+          toast.error("Error in fetching user,please login again!");
         }
       })();
     }, // eslint-disable-next-line
@@ -45,9 +44,9 @@ const Main = () => {
         <MovieContextProvider>
           <Switch>
             <Route exact path="/" component={Movies} />
+            <Route exact path="/login" component={Auth} />
             <ReviewContextProvider>
               <Route exact path="/reviews/movie/:id" component={Reviews} />
-              <Route exact path="/login" component={Auth} />
             </ReviewContextProvider>
             <Route component={NotFound} />
           </Switch>

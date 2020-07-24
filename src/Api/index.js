@@ -9,10 +9,6 @@ const Api = {
     return api.post(`${BASE_URL}/auth/login`, body);
   },
 
-  loadUser: () => {
-    return api.get(`${BASE_URL}/user`);
-  },
-
   logout: () => {
     return api.delete(`${BASE_URL}/auth/logout`, {
       refreshToken: localStorage.getItem("refreshToken"),
@@ -29,6 +25,10 @@ const Api = {
 
   loadReviewsByMovieId: (id) => {
     return api.get(`${BASE_URL}/reviews/movie/${id}`);
+  },
+
+  loadUserMovieReview: (id) => {
+    return api.get(`${BASE_URL}/reviews/read/${id}`);
   },
 };
 
