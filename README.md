@@ -13,3 +13,12 @@ To run the app on localhost (Node.js must installed):
 4. Run `npm run build` to create an optimized production build
 
 The website is running on test data.
+
+Test Credentials:
+
+| username | password    |
+| -------- | ----------- |
+| alexios  | odyssey     |
+| edward   | blackflag   |
+| ezio     | brotherhood |
+| eivor    | valhalla    |
