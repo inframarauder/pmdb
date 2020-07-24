@@ -45,6 +45,7 @@ const Auth = () => {
 
       setTimeout(() => (window.location.href = "/"), 1000);
     } catch (error) {
+      console.error(error.response);
       toast.error(error.response.data.error);
       setState({ ...state, loading: false });
     }
