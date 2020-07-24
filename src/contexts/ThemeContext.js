@@ -3,15 +3,17 @@ import React, { useState, createContext } from "react";
 export const ThemeContext = createContext();
 
 const ThemeContextProvider = (props) => {
-  const [theme, setTheme] = useState({ mode: "dark" });
+  const [theme, setTheme] = useState({ mode: localStorage.getItem("mode") });
 
   const toggleTheme = () => {
     switch (theme.mode) {
       case "dark":
-        setTheme({ ...theme, mode: "light" });
+        localStorage.setItem("mode", "light");
+        setTheme({ ...theme, mode: localStorage.getItem("mode") });
         break;
       case "light":
-        setTheme({ ...theme, mode: "dark" });
+        localStorage.setItem("mode", "dark");
+        setTheme({ ...theme, mode: localStorage.getItem("mode") });
         break;
       default:
         setTheme({ ...theme });

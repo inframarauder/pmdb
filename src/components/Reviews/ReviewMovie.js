@@ -33,7 +33,7 @@ const ReviewMovie = ({ movie }) => {
       if (state.userReview) {
         await Api.updateReview(state.userReview._id, formData);
       } else {
-        await Api.postReview(formData);
+        await Api.postReview({ ...formData, movie: movie._id });
       }
 
       toast.success("Updated!");

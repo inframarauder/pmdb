@@ -191,6 +191,7 @@
   padding: 10px;
   border: 2px solid #222222;
   border-radius: 20px;
+  margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 500px) {
