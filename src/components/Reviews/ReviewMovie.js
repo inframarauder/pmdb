@@ -87,7 +87,7 @@ const ReviewMovie = ({ movie }) => {
           />
           <Card.Title>
             <small>Rating : </small>
-            {movie.rating}/10
+            {movie.rating.toFixed(2)}/10
           </Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
             {movie.runtime}

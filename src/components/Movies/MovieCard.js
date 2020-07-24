@@ -26,7 +26,7 @@ const MovieCard = ({ movie }) => {
               {movie.genres}
               <span className="rating">
                 <small>Rating : </small>
-                {movie.rating}/10
+                {movie.rating.toFixed(2)}/10
               </span>
             </Card.Subtitle>
             <hr />
